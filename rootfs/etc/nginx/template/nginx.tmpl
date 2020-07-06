@@ -220,7 +220,9 @@ http {
 
     {{ if eq $file "GeoIP2-Anonymous-IP.mmdb" }}
     geoip2 /etc/nginx/geoip/GeoIP2-Anonymous-IP.mmdb {
-        $geoip2_is_anon source=$remote_addr is_anonymous;
+        $geoip2_is_anonymous source=$remote_addr is_anonymous;
+        $geoip2_is_anonymous_vpn source=$remote_addr is_anonymous_vpn;
+        $geoip2_is_tor_exit_node source=$remote_addr is_tor_exit_node;
         $geoip2_is_hosting_provider source=$remote_addr is_hosting_provider;
         $geoip2_is_public_proxy source=$remote_addr is_public_proxy;
     }

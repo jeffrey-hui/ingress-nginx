@@ -761,7 +761,7 @@ func NewDefault() Configuration {
 		EnableBrotli:                     false,
 		UseGzip:                          true,
 		UseGeoIP:                         true,
-		UseGeoIP2:                        false,
+		UseGeoIP2:                        true,
 		WorkerProcesses:                  strconv.Itoa(runtime.NumCPU()),
 		WorkerShutdownTimeout:            "240s",
 		VariablesHashBucketSize:          256,
